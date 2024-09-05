@@ -56,8 +56,8 @@ HEFESTO is a robust Java-based web application that provides IP geolocation and 
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/hefesto.git
-   cd hefesto
+   git clone https://github.com/juansebasv/Hefesto.git
+   cd Hefesto
    ```
 
 2. Build the project:
@@ -138,7 +138,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-Sebastian Vega
+Sebastian Vega - [sebastian.vega@example.com](mailto:sebastian.vega@example.com)
+
+Project Link: [https://github.com/juansebasv/Hefesto](https://github.com/juansebasv/Hefesto)
 
 ---
 
