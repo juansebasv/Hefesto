@@ -13,6 +13,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -48,8 +49,8 @@ public class IpController {
     @GetMapping("/{ip}/info")
     public IpResponse getIpGeoInfoByIp(
             @Parameter(description = "IP address to geolocate", required = true, example = "192.0.2.1")
-            @Valid @NotBlank @PathVariable("ip") @Size(min = 1, max = 45) String ip) {
-        var ipGeoInfo = ipGeoService.getIpGeoInfoByIp(ip);
-        return ipMapper.requestToDomain(ipGeoInfo);
+            @Valid @NotBlank @NotEmpty @PathVariable("ip") @Size(min = 7, max = 15) String ip) {
+            var ipGeoInfo = ipGeoService.getIpGeoInfoByIp(ip);
+            return ipMapper.requestToDomain(ipGeoInfo);
     }
 }

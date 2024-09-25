@@ -13,6 +13,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -48,7 +49,7 @@ public class NameController {
     @GetMapping("/{name}/info")
     public NameResponse getNationalityByName(
             @Parameter(description = "Name to get nationality information for", required = true, example = "John")
-            @Valid @NotBlank @PathVariable("name") @Size(min = 3, max = 20) String name) {
+            @Valid @NotBlank @NotNull @PathVariable("name") @Size(min = 3, max = 20) String name) {
         log.info("Received request to get nationality information for name: {}", name);
         var nameDO = nameService.getNationalityByName(name);
         var response = nameMapper.requestToDomain(nameDO);
